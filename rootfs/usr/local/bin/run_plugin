@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ -z "${PLUGIN_PATH}" ]]; then
+    echo "ERROR: path is missing";
+    exit 1;
+fi
+
+# enter der workdir
+cd $PLUGIN_BASE_WORKDIR
+
+# show the command we use
+set -x
+
+#execute command
+eclint ${PLUGIN_CLI}
